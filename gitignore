@@ -1,0 +1,20 @@
+# Derleme çıktıları
+new_life_gen
+persona_turk
+*.o
+*.out
+*.exe
+
+# Klasörler
+output/
+build/
+bin/
+
+# MacOS ve Linux sistem dosyaları
+.DS_Store
+*.swp
+
+# IDE/editor dosyaları
+.vscode/
+.idea/
+*.log
