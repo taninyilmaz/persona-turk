@@ -1,0 +1,49 @@
+# Derleme çıktılar
+persona_turk
+*.o
+*.out
+*.exe
+
+# Klasörler
+output/
+build/
+bin/
+.vscode/
+
+# MacOS ve Linux sistem dosyaları
+.DS_Store
+*.swp
+
+# IDE/editor dosyaları
+.vscode/
+.idea/
+*.log
+.cproject
+.project
+.settings/
+*.cbp
+*.depend
+*.layout
+
+# Yedek ve geçici dosyalar
+*~
+*.bak
+*.tmp
+
+# Ctags ve cscope
+tags
+cscope.*
+
+# Test coverage
+*.gcda
+*.gcno
+*.gcov
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Ortam/gizli dosyalar
+*.env
+.env
+*.secret
