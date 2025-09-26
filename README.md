@@ -14,9 +14,13 @@
 - All data is generated in a realistic and format-correct way
 
 ### Usage
-1. **Compile:**
+1. **Compile(MacOS):**
    ```sh
    gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk
+   ```
+   *Compile(Ubuntu):**
+   ```sh
+   gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk -lm
    ```
 2. **Run:**
    ```sh
