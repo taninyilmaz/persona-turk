@@ -18,7 +18,7 @@
    ```sh
    gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk
    ```
-   *Compile(Ubuntu):**
+   **Compile(Ubuntu):**
    ```sh
    gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk -lm
    ```
@@ -44,9 +44,14 @@
 - Tüm veriler gerçekçi ve formatına uygun şekilde üretilir
 
 ### Kullanım
-1. **Derleyin:**
+1. **Derleyin(MacOS):**
    ```sh
    gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk
+   
+   ```
+   **Derleyin(Ubuntu):**
+   ```sh
+   gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk -lm
    ```
 2. **Çalıştırın:**
    ```sh
