@@ -14,19 +14,53 @@
 - All data is generated in a realistic and format-correct way
 
 ### Usage
-1. **Compile(MacOS):**
+
+#### 🛠️ Compilation & Installation (Using Makefile)
+You can easily compile and install the application globally:
+1. **Compile:**
    ```sh
-   gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk
+   make
    ```
-   **Compile(Ubuntu):**
+2. **Install globally (Optional):**
    ```sh
-   gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk -lm
+   make install
    ```
-2. **Run:**
+   *Now you can run `persona_turk` from any directory.*
+3. **Clean build files:**
    ```sh
-   ./persona_turk
+   make clean
    ```
-3. **Follow the menu** to generate the data you need.
+
+#### 🐳 Using Docker
+If you don't have GCC or Make installed, you can build and run using Docker:
+1. **Build image:**
+   ```sh
+   docker build -t persona_turk .
+   ```
+2. **Run container (Interactive):**
+   ```sh
+   docker run -it persona_turk
+   ```
+
+#### 💻 Running Modes
+* **Interactive Menu (Default):**
+  If you run it without any arguments, it will open the interactive menu:
+  ```sh
+  ./persona_turk
+  ```
+* **CLI Mode (Parameters):**
+  You can generate specific data directly without entering the menu:
+  ```sh
+  ./persona_turk -n          # Generates a random name
+  ./persona_turk --surname   # Generates a random surname
+  ./persona_turk --fullname  # Generates a random full name
+  ./persona_turk -e          # Generates a random email
+  ./persona_turk -p          # Generates a random phone number
+  ./persona_turk -c          # Generates a random credit card
+  ./persona_turk -t          # Generates a random TCKN
+  ./persona_turk -a          # Generates all information at once
+  ./persona_turk -h          # Shows the help menu
+  ```
 
 ---
 
@@ -44,20 +78,53 @@
 - Tüm veriler gerçekçi ve formatına uygun şekilde üretilir
 
 ### Kullanım
-1. **Derleyin(MacOS):**
+
+#### 🛠️ Derleme ve Kurulum (Makefile ile)
+Uygulamayı kolayca derleyebilir ve sisteminize kurabilirsiniz:
+1. **Derleyin:**
    ```sh
-   gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk
-   
+   make
    ```
-   **Derleyin(Ubuntu):**
+2. **Sisteme Kurun (İsteğe Bağlı):**
    ```sh
-   gcc -Wall -Wextra -std=c11 main.c functions.c -o persona_turk -lm
+   make install
    ```
-2. **Çalıştırın:**
+   *Artık terminalin her yerinden sadece `persona_turk` yazarak programı çalıştırabilirsiniz.*
+3. **Derleme Dosyalarını Temizleyin:**
    ```sh
-   ./persona_turk
+   make clean
    ```
-3. **Menüyü takip ederek** ihtiyacınız olan verileri üretebilirsiniz.
+
+#### 🐳 Docker ile Çalıştırma
+Bilgisayarınızda GCC veya Make kurulu değilse, Docker kullanarak çalıştırabilirsiniz:
+1. **İmajı Derleyin:**
+   ```sh
+   docker build -t persona_turk .
+   ```
+2. **Konteyneri Çalıştırın (İnteraktif):**
+   ```sh
+   docker run -it persona_turk
+   ```
+
+#### 💻 Çalıştırma Modları
+* **Etkileşimli Menü (Varsayılan):**
+  Hiçbir parametre vermeden çalıştırırsanız interaktif seçim menüsü açılır:
+  ```sh
+  ./persona_turk
+  ```
+* **Komut Satırı Parametreleri (CLI Modu):**
+  Menüye girmeden doğrudan veri üretmek için aşağıdaki parametreleri kullanabilirsiniz:
+  ```sh
+  ./persona_turk -n          # Rastgele isim üretir
+  ./persona_turk --surname   # Rastgele soyisim üretir
+  ./persona_turk --fullname  # Rastgele ad soyad üretir
+  ./persona_turk -e          # Rastgele e-posta üretir
+  ./persona_turk -p          # Rastgele telefon numarası üretir
+  ./persona_turk -c          # Rastgele kredi kartı üretir
+  ./persona_turk -t          # Rastgele TCKN üretir
+  ./persona_turk -a          # Tüm verileri tek seferde üretir
+  ./persona_turk -h          # Yardım menüsünü gösterir
+  ```
 
 ---
 
