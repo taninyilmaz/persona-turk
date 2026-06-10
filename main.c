@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 void generate_full_name(char *fullname, size_t max_len, char *name1,
                         char *name2, char *surname, int *is_double_name);
@@ -15,7 +16,22 @@ void generateTCKN(char *tckn, size_t max_len);
 void generateAll(char *fullname, char *name, char *surname, char *email,
                  char *phone, char *tckn, char *card_number, char *card_type);
 
-int main() {
+void print_usage(const char *prog_name) {
+  printf("Kullanim: %s [PARAMETRE]\n\n", prog_name);
+  printf("Parametreler:\n");
+  printf("  -h, --help       Yardim menusunu gosterir\n");
+  printf("  -n, --name       Rastgele isim uretir\n");
+  printf("  -s, --surname    Rastgele soyisim uretir\n");
+  printf("  -f, --fullname   Rastgele ad soyad uretir\n");
+  printf("  -e, --email      Rastgele e-posta uretir\n");
+  printf("  -p, --phone      Rastgele telefon numarasi uretir\n");
+  printf("  -c, --card       Rastgele kredi karti uretir\n");
+  printf("  -t, --tckn       Rastgele TCKN uretir\n");
+  printf("  -a, --all        Tum verileri tek seferde uretir\n\n");
+  printf("Parametresiz calistirilirsa interaktif menu acilir.\n");
+}
+
+int main(int argc, char *argv[]) {
   srand(time(NULL));
 
   int choice;
@@ -30,6 +46,69 @@ int main() {
   char name1[50], name2[50];
   int is_double_name;
   size_t max_len = 100;
+
+  if (argc > 1) {
+    char *arg = argv[1];
+
+    if (strcmp(arg, "-h") == 0 || strcmp(arg, "--help") == 0) {
+      print_usage(argv[0]);
+      return 0;
+    }
+    else if (strcmp(arg, "-n") == 0 || strcmp(arg, "--name") == 0) {
+      randomName(name, max_len);
+      printf("%s\n", name);
+      return 0;
+    }
+    else if (strcmp(arg, "-s") == 0 || strcmp(arg, "--surname") == 0) {
+      randomSurname(surname, max_len);
+      printf("%s\n", surname);
+      return 0;
+    }
+    else if (strcmp(arg, "-f") == 0 || strcmp(arg, "--fullname") == 0) {
+      generate_full_name(fullname, max_len, name1, name2, surname, &is_double_name);
+      printf("%s\n", fullname);
+      return 0;
+    }
+    else if (strcmp(arg, "-e") == 0 || strcmp(arg, "--email") == 0) {
+      generate_full_name(fullname, max_len, name1, name2, surname, &is_double_name);
+      generateEmailFromParts(email, max_len, name1, name2, is_double_name, surname);
+      printf("%s\n", email);
+      return 0;
+    }
+    else if (strcmp(arg, "-p") == 0 || strcmp(arg, "--phone") == 0) {
+      generatePhoneNumber(phone, max_len);
+      printf("%s\n", phone);
+      return 0;
+    }
+    else if (strcmp(arg, "-c") == 0 || strcmp(arg, "--card") == 0) {
+      generateCreditCardNumber(card_number, sizeof(card_number), card_type, sizeof(card_type));
+      printf("%s (%s)\n", card_number, card_type);
+      return 0;
+    }
+    else if (strcmp(arg, "-t") == 0 || strcmp(arg, "--tckn") == 0) {
+      generateTCKN(tckn, sizeof(tckn));
+      printf("%s\n", tckn);
+      return 0;
+    }
+    else if (strcmp(arg, "-a") == 0 || strcmp(arg, "--all") == 0) {
+      generate_full_name(fullname, max_len, name1, name2, surname, &is_double_name);
+      generateEmailFromParts(email, max_len, name1, name2, is_double_name, surname);
+      generatePhoneNumber(phone, max_len);
+      generateCreditCardNumber(card_number, sizeof(card_number), card_type, sizeof(card_type));
+      generateTCKN(tckn, sizeof(tckn));
+      printf("Ad Soyad: %s\n", fullname);
+      printf("E-posta: %s\n", email);
+      printf("Telefon: %s\n", phone);
+      printf("Kredi Karti: %s (%s)\n", card_number, card_type);
+      printf("TCKN: %s\n", tckn);
+      return 0;
+    }
+    else {
+      printf("Hata: Bilinmeyen parametre '%s'\n\n", arg);
+      print_usage(argv[0]);
+      return 1;
+    }
+  }
 
   do {
     printf("\n=== NEW LIFE GENERATOR ===\n");
