@@ -15,7 +15,7 @@
 
 ### Usage
 
-#### 🛠️ Compilation & Installation (Using Makefile)
+####  Compilation & Installation (Using Makefile)
 You can easily compile and install the application globally:
 1. **Compile:**
    ```sh
@@ -42,7 +42,7 @@ If you don't have GCC or Make installed, you can build and run using Docker:
    docker run -it persona_turk
    ```
 
-#### 💻 Running Modes
+####  Running Modes
 * **Interactive Menu (Default):**
   If you run it without any arguments, it will open the interactive menu:
   ```sh
@@ -79,7 +79,7 @@ If you don't have GCC or Make installed, you can build and run using Docker:
 
 ### Kullanım
 
-#### 🛠️ Derleme ve Kurulum (Makefile ile)
+####  Derleme ve Kurulum (Makefile ile)
 Uygulamayı kolayca derleyebilir ve sisteminize kurabilirsiniz:
 1. **Derleyin:**
    ```sh
@@ -95,7 +95,7 @@ Uygulamayı kolayca derleyebilir ve sisteminize kurabilirsiniz:
    make clean
    ```
 
-#### 🐳 Docker ile Çalıştırma
+####  Docker ile Çalıştırma
 Bilgisayarınızda GCC veya Make kurulu değilse, Docker kullanarak çalıştırabilirsiniz:
 1. **İmajı Derleyin:**
    ```sh
@@ -106,7 +106,7 @@ Bilgisayarınızda GCC veya Make kurulu değilse, Docker kullanarak çalıştır
    docker run -it persona_turk
    ```
 
-#### 💻 Çalıştırma Modları
+####  Çalıştırma Modları
 * **Etkileşimli Menü (Varsayılan):**
   Hiçbir parametre vermeden çalıştırırsanız interaktif seçim menüsü açılır:
   ```sh
