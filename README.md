@@ -31,7 +31,7 @@ You can easily compile and install the application globally:
    make clean
    ```
 
-#### 🐳 Using Docker
+####  Using Docker
 If you don't have GCC or Make installed, you can build and run using Docker:
 1. **Build image:**
    ```sh
